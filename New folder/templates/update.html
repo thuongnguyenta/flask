@@ -1,0 +1,24 @@
+{% extends 'user.html' %}
+
+{% block body %}
+
+
+
+<form action="/update/{{results[0]['mail']}}" method="POST">
+        
+{%for item in results%}
+
+    <p>Email</p>
+    <p>{{item['mail']}}</p>
+    <p>User name:</p>
+    <input type="text" name="name" value= "{{item['user_name']}}">
+    <br>
+    <p>Phone Number:</p>
+    <input type="text" name="pn" value="{{item['number_phone']}}" >
+    <input type="submit" value="Submit"/>
+{%endfor%}
+</form>
+    <p><a href="/information/personal/changepass/{{results[0]['mail']}}">Change_password</a></p>
+
+
+{% endblock %}

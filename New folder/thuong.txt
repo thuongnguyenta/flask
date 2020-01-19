@@ -1,0 +1,39 @@
+# @app.route('/information/personal/<mail>')
+# def information(mail):
+#     if session['id']==mail :
+#         cur =mysql.connection.cursor()
+#         cur.execute("SELECT * FROM user WHERE mail=%s",[mail])
+#         rows = cur.fetchall()
+#         return    render_template('update.html',results=rows)
+#     return redirect(url_for('index'))
+
+
+# @app.route('/information/personal/changepass/<mail>')
+# def form(mail):
+#     if session['id']==mail :
+#         cur =mysql.connection.cursor()
+#         cur.execute("SELECT * FROM user WHERE mail=%s",[mail])
+#         # mysql.connection.commit()
+#         rows = cur.fetchall()
+#         return render_template('change_password.html',results=rows)
+
+
+# @app.route('/information/personal/changepassword/<mail>' ,methods= ['GET','POST'])
+# def change_password(mail):
+#     if session['id']==mail :
+#         error=None
+#         cur =mysql.connection.cursor()
+#         old_pass=request.form['old_pass']
+#         new_pass =request.form['new_pass']
+#         confirm_new_pass =request.form['confirm_new_pass']
+#         cur.execute("SELECT * FROM user WHERE mail=%s",[mail])
+#         # mysql.connection.commit()
+#         rows = cur.fetchall()
+#         old_pass_database = rows[0]['password']
+#         if old_pass == old_pass_database and new_pass==confirm_new_pass :
+#             cur.execute("UPDATE user SET password = %s WHERE mail = %s",(new_pass,mail))
+#             mysql.connection.commit()
+#         else:
+#             error="Sai mk hoặc hai mật khẩu không trùng khớp"
+
+#         return render_template('change_password.html',results=rows,error=error)
