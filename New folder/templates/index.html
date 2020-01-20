@@ -1,0 +1,30 @@
+{% extends 'user.html' %}
+
+{% block body %}
+
+    <p></p>
+    <table border='1'>
+            
+    {%for item in results%}
+        <tr>
+        {%for key, value in item.items()%}
+        <tr>
+        <th>{{key}}</th>
+        <td>{{value}}</td>
+        </tr>
+        {%endfor%}
+         
+         <td><a onclick="return confirm('Are you sure?')" href = "/delele/{{item['mail']}}">Delete</a></td>
+        <td><a href="/update_infor/{{item['mail']}}">Update</a></td>
+        </tr>
+    {%endfor%}
+            
+    </table>
+
+{% endblock %}
+
+
+
+    
+     
+  

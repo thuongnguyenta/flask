@@ -1,0 +1,30 @@
+{% include 'user.html' %}
+{% block body %}
+<div class="manage_add_product">
+    <div class ="add_product ">
+    <form action="/product/add_product_handle" method="POST">
+        <label class ="form login_form_element">Ten SP</label>
+        <input class ="form login_form_element" type="text" name="product_name">
+        <label class ="form login_form_element" >Gia</label>
+        <input class ="form login_form_element" type="text" name="product_cost">
+        <label class ="form login_form_element" >So Luong</label>
+        <input class ="form login_form_element" type="text" name="product_quanlity">
+        <label class ="form login_form_element">Loại hàng</label>
+        <select class ="form login_form_element" name="product_catalogy">
+            {% for catalog in catalogy%}
+                <option>{{catalog['catalogy_id']}}</option>
+            {% endfor %}
+        </select>
+        <input class ="form login_form_element signin" type="submit" value="Submit">
+    </form>
+    </div>
+    <div >
+            {% for catalog in catalogy%}
+            <p>{{catalog['catalogy_id']}}: {{catalog['catalogy_name']}}</p>
+            {% endfor %}
+    </div>
+    </div>
+
+
+
+{% endblock %}

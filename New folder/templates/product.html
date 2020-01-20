@@ -1,0 +1,46 @@
+{% include 'user.html' %}
+{% block body %}
+    {% for product in products%}
+        <div class="abc" id="{{product['product_id']}}+1" >
+            
+            <ul>
+                <li>{{product['product_name']}}</li>
+                <li>
+                        {{product['cost']}}
+                </li>
+                <li><button id="{{product['product_id']}}+1" onclick= "detail(this.id)"> Detail</button></li>
+                
+            </ul>
+            
+        </div>
+        <div class="hidden" id="{{product['product_id']}}">
+            <p id ="{{product['product_id']}}"  onclick="cancel(this.id)">X</p>
+            <div class="product_detail">
+                <div class="detail">
+                    <form action="" method=""></form>
+                        <tr>
+                            <td>
+                                {{product['product_id']}}
+                            </td>
+                            <td>
+                                {{product['product_name']}}
+                            </td>
+                            <td>
+                                {{product['cost']}}
+                            </td>
+                            <td>
+                                {{product['quanlity']}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="number" name="sl"></td>
+                            <td><input type="submit" value="Mua"></td>
+                        </tr>
+                    </form>   
+                </div>
+                <div class="image">Nguyễn Tá Thưởng đẹp trai</div>
+            </div>  
+        </div>
+        
+    {% endfor %}
+{% endblock %}

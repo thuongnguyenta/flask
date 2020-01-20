@@ -1,0 +1,35 @@
+<html>
+    <head>
+            <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='app.css', v=0.02)}}">
+            <script src="/static/hello.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="catalogy">
+                
+                    <div><a class="catalogy_item" href="/product/manage_product">Product</a></div>
+                    <div><a class="catalogy_item" href="/product/manage_product">Staff</a></div>
+                    <div><a class="catalogy_item" href="/product/manage_product">Revenue Statistic </a></div>
+                    <div><a class="catalogy_item" href="/product/manage_product">Other</a></div>
+                
+            </div>
+
+            <div class="content">
+                <div class="person">
+                    {% if session %}
+                    <div><img src="" class="person_img" width="50px" height="50px"/></div>
+                    <div>{{session['id']}}</div>
+                    <div><a href="/logout">Logout</a></div>
+                    {% else %}
+                    <div><a href="/index">Login</a></div>
+                    {% endif %}
+                </div>
+
+                
+            </div>
+        </div>
+        
+                {% block body %}{% endblock %}
+        
+    </body>
+</html>

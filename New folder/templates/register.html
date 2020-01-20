@@ -1,0 +1,49 @@
+<html>
+    <head>
+         <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='app.css', v=0.01)}}">
+         <script src="/static/hello.js"></script>
+    </head>
+    <body class="login">
+       <div class="introduce">
+          <div>
+             <p> Wellcome !</p>
+          </div>
+          <div>
+             <p>Repo:</p>
+             <p>github.com.thuongnguyenta.flask</p>
+          </div>
+       </div>
+      <div class="login_form">
+            <!-- <form action="/register" method="POST">
+            <label>Email:</label>
+            <input name="email" type="text" required/>
+            <label>User Name:</label>
+            <input name="username" type="text" required/>
+            <label>Password:</label>
+            <input name="password" type="password" required/>
+            <label>Confirm Password:</label>
+            <input name="cppassword" type="password" required/>
+            <input type="submit" value="Submit"/> -->
+         
+        <form action="/register" method="POST">
+         <div>
+        <label class="login_form_element form">Email:</label>
+         </div>
+         <div >
+        <input class="login_form_element form" name="email" type="text" required >
+         </div>
+        <div><label class="login_form_element form">User_name:</label></div>
+        <input class="login_form_element form" name="username" type="text" required >
+        <div><label class="login_form_element form">Password:</label></div>
+        <div><input  class="login_form_element form" name="password" type="password"  ></div>
+        <div><label class="login_form_element form">Confirm Password:</label></div>
+        <div><input  class="login_form_element form" name="cppassword" type="password"  ></div>
+        <div><input class="login_form_element form signin" type="submit" value="Login"/></div>
+        <div>{% if error :%}
+            {{error}}
+         {% endif %}
+         </div>
+        </form>
+      </div>
+    </body>
+</html>

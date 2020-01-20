@@ -1,0 +1,30 @@
+{% include 'user.html' %}
+{% block body %}
+    <div> 
+        <div>
+            <table>
+                {% for product in products%}  
+                <tr>
+                    <td>
+                        {{ product['product_id']}}
+                    </td>
+                    <td>
+                        {{product['product_name']}}
+                    </td>
+                    <td>
+                        {{product['cost']}}
+                    </td>
+                    <td>{{product['quanlity']}}</td>
+                </tr>
+                {%endfor%} 
+            </table>
+        </div>
+        <a href="/product/add" style=" text-decoration:none; border:1px solid #000000 ; background-color:aqua">
+            Thêm SP
+        </a>
+    </div>
+    
+
+
+
+{% endblock%}

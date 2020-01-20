@@ -1,0 +1,23 @@
+{% include 'user.html' %}
+{% block body %}
+<div class="detail">
+<p onclick="sayHello()"> X</p>
+<form action="" method="POST">
+    {% for product in product_detail%}
+        <tr>
+            <td>{{product['product_id']}}</td>
+            <td>{{product['name']}}</td>
+            <td>
+                    {{product['cost']}}
+            </td>
+            <td>{{product['number']}}</td>
+        </tr>
+        <tr>
+            <td><input type="number" name="sl"></td>
+            <td><input type="submit" value="Mua"></td>
+        </tr>
+    {% endfor %}
+</form>
+</div>
+
+{% endblock %}
